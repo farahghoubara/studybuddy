@@ -16,7 +16,7 @@ Route::get('/exam-question', [QuestionController::class, 'index'])->name('questi
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/forget-password', [LoginController::class, 'forgetPassword'])->name('forget-password');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
-
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 
 

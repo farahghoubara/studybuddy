@@ -61,7 +61,7 @@ header {
 
 .login-box {
     width: 450px;
-    height: 450px;
+    height: 500px;
 }
 
 .forget-password-box {
@@ -71,7 +71,7 @@ header {
 
 .register-box {
     width: 600px;
-    height: 600px;
+    height: 650px;
 }
 
 .box h2 {
@@ -81,7 +81,7 @@ header {
 }
 .box input[type="Email"],
 .box input[type="password"],
-.box input[type="name"],
+.box input[type="text"],
 .box input[type="username"],
 .box input[type="tel"] {
     border: 0;
@@ -113,8 +113,11 @@ header {
     transition: 0.25s;
     width: 10%;
 }
+.box input[type="tel"]:focus,
 .box input[type="email"]:focus,
-.box input[type="password"]:focus {
+.box input[type="password"]:focus,
+.box input[type="text"]:focus,
+.box input[type="username"]:focus {
     width: 280px;
     -webkit-animation: colorChange 9s alternate;
     transition: height 0.3s, width 0.3s 0.1s;

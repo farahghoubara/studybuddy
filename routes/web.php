@@ -13,15 +13,18 @@ Route::get('/public-rooms', [RoomsController::class, 'publicRooms'])->name('publ
 Route::get('/private-rooms', [RoomsController::class, 'privateRooms'])->name('private-rooms');
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::get('/exam-question', [QuestionController::class, 'index'])->name('questions');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/forget-password', [LoginController::class, 'forgetPassword'])->name('forget-password');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-Route::post('/login', [LoginController::class, 'login'])->name('userLogin');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('reset.password');
 
+// Guest Middleware
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('userLogin');
+    Route::get('/forget-password', [LoginController::class, 'forgetPassword'])->name('forget-password');
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+    Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('reset.password');
+});
 
-
-
-
+// Auth Middleware
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});

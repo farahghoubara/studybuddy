@@ -1,6 +1,14 @@
+<style>
+    header {
+        @if (!request()->routeIs('landing'))
+            border-bottom: 3px solid #ccc;
+        @endif
+    }
+</style>
+
 <header>
     <nav class="navbar navbar-expand-sm bg-light text-dark">
-        <div class="container-fluid p-3">
+        <div class="container-fluid">
             <div class="col-3">
                 <a class="navbar-brand" href="{{ route('landing') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" width="170" height="80">

@@ -17,6 +17,20 @@ header nav button {
     border-radius: 5px;
 }
 
+header .container-fluid{
+    padding: 16px 60px;
+}
+
+.font-900-xl{
+    font-size: 125px !important;
+    font-weight: 900!important;
+}
+
+.font-900-lg{
+    font-size: 60px !important;
+    font-weight: 900!important;
+}
+
 header nav li a {
     font-size: 18px !important;
     font-weight: 600 !important;
@@ -38,9 +52,6 @@ header nav .links .active:hover {
     color: #308acb !important;
 }
 
-header {
-    border-bottom: 3px solid #ccc;
-}
 .main_section {
     padding: 100px 0;
 }
@@ -203,10 +214,51 @@ div p a:hover {
 
 .main_container {
     margin: 30px 60px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 footer {
     background-color: #4994d0;
     color: #fff;
+}
+
+.identity_color {
+    color: #4b93cc;
+}
+
+.buttons-cta {
+    align-items: flex-end;
+    padding-bottom: 10px;
+    margin-top: 35px;
+    display: flex;
+}
+
+.st-primary-button-1 {
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    border-radius: 12px;
+    flex: none;
+    justify-content: center;
+    align-self: flex-start;
+    align-items: center;
+    height: auto;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 22px;
+    text-decoration: none;
+    transition: font-size .3s, transform .4s, background-color .4s;
+    display: flex;
+}
+
+.st-primary-button-1:hover {
+    border: 2px solid #000;
+    color: #4b93cc;
+    background-color: rgba(0, 0, 0, 0);
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    transform: scale(1.02);
 }

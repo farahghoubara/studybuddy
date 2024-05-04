@@ -8,11 +8,13 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ScheduleController;
 
+
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/public-rooms', [RoomsController::class, 'publicRooms'])->name('public-rooms');
 Route::get('/private-rooms', [RoomsController::class, 'privateRooms'])->name('private-rooms');
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::get('/exam-question', [QuestionController::class, 'index'])->name('questions');
+
 
 // Guest Middleware
 Route::middleware('guest')->group(function () {
@@ -27,4 +29,8 @@ Route::middleware('guest')->group(function () {
 // Auth Middleware
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/profile', [RegisterController::class, 'edit'])->name('profile');
+    Route::post('/profile/update', [RegisterController::class, 'update'])->name('profile.update');
+    Route::post('/profile/update-password', [RegisterController::class, 'updatePassword'])->name('profile.updatePassword');
+
 });

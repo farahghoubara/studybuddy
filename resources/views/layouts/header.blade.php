@@ -51,7 +51,7 @@
                             <i class="fas fa-user mr-2" style="padding-right: 5px;"></i>  {{ Auth::user()->username }} <!-- Display username or user's name -->
                           </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">My Profile</a> <!-- Link to user's profile -->
+                            <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a> <!-- Link to user's profile -->
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="dropdown-item">Logout</button> <!-- Logout button -->

@@ -13,6 +13,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
+    @if (request()->routeIs('profile'))
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @endif
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 

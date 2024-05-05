@@ -39,17 +39,26 @@
             </div>
             <div class="button col-3 d-flex justify-content-end">
                 @if (Auth::guest())
-                <div class="button col-3 d-flex justify-content-end">
-                    <a href="{{ route('login') }}" class="Login">
-                        <button class="btnLogin-popup">Login</button>
-                    </a>
-                </div>
+                    <!-- Display login button if user is a guest (not authenticated) -->
+                    <div class="button col-3 d-flex justify-content-end">
+                        <a href="{{ route('login') }}" class="Login">
+                            <button class="btnLogin-popup">Login</button>
+                        </a>
+                    </div>
                 @else
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="btnLogin-popup">Logout</button>
-                </form>
-                @endif
+                    <div class="dropdown">
+                        <button type="button" class="button dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user mr-2" style="padding-right: 5px;"></i>  {{ Auth::user()->username }} <!-- Display username or user's name -->
+                          </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a> <!-- Link to user's profile -->
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button> <!-- Logout button -->
+                            </form>
+                        </div>
+                    </div>
+            @endif
             </div>
         </div>
     </nav>

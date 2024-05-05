@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Wallpaper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RoomsController extends Controller
 {
-    public function publicRooms()
+    public function index()
     {
-        $categories = Category::pluck('name');
+        $categories = Category::all();
+        $wallpapers = Wallpaper::all();
         $user = Auth::user();
-        return view('rooms.public_rooms.index', compact('user', 'categories'));
+        return view('rooms.index', compact('user', 'categories', 'wallpapers'));
     }
 
-    public function privateRooms()
-    {
-        return view('rooms.private_rooms.index');
+    public function store(Request $request){
     }
+
+    // public function privateRooms()
+    // {
+    //     return view('rooms.private_rooms.index');
+    // }
 }

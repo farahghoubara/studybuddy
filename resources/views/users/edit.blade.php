@@ -8,7 +8,7 @@
             <div data-mdb-alert-init="" class="alert alert-success" role="alert" data-mdb-color="success"
                 data-mdb-alert-initialized="true"><i class="fas fa-check-circle me-3"></i>{{ Session::get('success') }}</div>
         @endif
-        <section class="our-dashbord dashbord pt-4">
+        <section class="our-dashbord dashbord pt-4" style="min-height: 70vh;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -79,9 +79,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="form-group d-flex mb0">
                                                                     <button type="submit"
-                                                                        class="btn btn-thm me-3">Update</button>
+                                                                        class="btn btn-lg btn-info me-3">Update</button>
                                                                     <button type="button"
-                                                                        class="btn btn-white">Cancel</button>
+                                                                        class="btn btn-lg btn-danger text-white">Cancel</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -128,9 +128,9 @@
                                                             <div class="col-sm-12">
                                                                 <div class="form-group d-flex mb0">
                                                                     <button type="submit"
-                                                                        class="btn btn-thm me-3">Update</button>
+                                                                        class="btn btn-lg btn-info me-3">Update</button>
                                                                     <button type="button"
-                                                                        class="btn btn-white">Cancel</button>
+                                                                        class="btn btn-lg btn-danger text-white">Cancel</button>
                                                                 </div>
                                                             </div>
                                                         </div>

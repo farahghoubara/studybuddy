@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Public Rooms')
+@section('title', 'Rooms')
 
 @section('content')
     @if (Auth::user())
@@ -15,9 +15,9 @@
                 <img class="" style="max-width: 500px" src="{{ asset('images/user-focus.svg') }}" alt="Study">
             </div>
             <div class="row" data-aos="fade-right" data-aos-duration="1000">
-                <div class="buttons-cta d-flex justify-content-center align-items-center"><a
-                        href="{{ route('private-rooms') }}" class="st-primary-button-1 w-button">Create your private room
-                        now</a>
+                <div class="buttons-cta d-flex justify-content-center align-items-center">
+                    <a href="#" class="st-primary-button-1 w-button" data-bs-toggle="modal"
+                        data-bs-target="#createRoomModal">Create your room now</a>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -60,7 +60,8 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-end">
                                         <div class="my-auto text-white room_category_div">
-                                            <span class="identity_background room_category">{{ $categories[0] }}</span>
+                                            <span
+                                                class="identity_background room_category">{{ $categories[0]->name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +99,8 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-end">
                                         <div class="my-auto text-white room_category_div">
-                                            <span class="identity_background room_category">{{ $categories[1] }}</span>
+                                            <span
+                                                class="identity_background room_category">{{ $categories[1]->name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +139,8 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-end">
                                         <div class="my-auto text-white room_category_div">
-                                            <span class="identity_background room_category">{{ $categories[2] }}</span>
+                                            <span
+                                                class="identity_background room_category">{{ $categories[2]->name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +179,8 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-end">
                                         <div class="my-auto text-white room_category_div">
-                                            <span class="identity_background room_category">{{ $categories[3] }}</span>
+                                            <span
+                                                class="identity_background room_category">{{ $categories[3]->name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +204,9 @@
         </div>
     </div>
 
-    </div>
+
+    @include('rooms._create_modal')
+
 @endsection
 @push('scripts')
     <script type='text/javascript'>

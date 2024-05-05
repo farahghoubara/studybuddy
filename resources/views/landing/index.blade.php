@@ -10,9 +10,8 @@
                     <h1 class="font-900-lg">EMBRACE<br>MODERN LEARNING.<br>IT'S TIME FOR A CHANGE WITH</h1>
                     <h1 class="font-900-xl identity_color">STUDYBUDDY</h1>
                 </div>
-                <div class="buttons-cta d-flex align-items-center"><a href="{{ route('public-rooms') }}"
-                        class="st-primary-button-1 w-button">Dicover Public Rooms</a>
-                    <span>Seeking calm? Create your <a href="{{ route('private-rooms') }}">Private Room</a></span>
+                <div class="buttons-cta d-flex align-items-center"><a href="{{ route('rooms') }}"
+                        class="st-primary-button-1 w-button">Dicover Rooms</a>
                 </div>
             </div>
             <div class="col-5">

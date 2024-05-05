@@ -2,7 +2,7 @@
     <!-- Grid container -->
     <div class="container pt-4">
         <!-- Section: Social media -->
-        <section class="mb-4">
+        <div class="mb-4">
             <!-- Facebook -->
             <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!" role="button"
                 data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
@@ -17,7 +17,7 @@
             <!-- Linkedin -->
             <a class="btn btn-link btn-floating btn-lg text-white m-1" href="#!" role="button"
                 data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-        </section>
+        </div>
         <!-- Section: Social media -->
     </div>
     <!-- Grid container -->

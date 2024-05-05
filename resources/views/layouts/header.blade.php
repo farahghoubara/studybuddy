@@ -24,11 +24,11 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('public-rooms') ? 'active' : '' }}" href="{{ route('public-rooms') }}">Public Rooms</a>
+                        <a class="nav-link {{ request()->routeIs('rooms') ? 'active' : '' }}" href="{{ route('rooms') }}">Rooms</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('private-rooms') ? 'active' : '' }}" href="{{ route('private-rooms') }}">Private Rooms</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('schedule') ? 'active' : '' }}" href="{{ route('schedule') }}">Schedule</a>
                     </li>

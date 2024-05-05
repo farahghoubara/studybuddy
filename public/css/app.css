@@ -446,3 +446,11 @@ footer {
 .rooms .room_card .room_info .room_description p {
     height: 50px;
 }
+
+.btn-info{
+    background-color: #4b93cc!important;
+    color: #fff!important;
+}
+.btn-info:hover{
+    background-color: #3b76a6!important;
+}

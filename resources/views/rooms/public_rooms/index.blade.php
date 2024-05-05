@@ -43,7 +43,7 @@
         <hr>
         <div class="container-fluid rooms">
             <div class="row">
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col-lg-4 col-3  d-flex justify-content-center mb-5">
                     <div class="room_card">
                         <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
                             style="background-image: url('{{ asset('images/wallpaper-one.jpg') }}');">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
                     <div class="room_card">
                         <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
                             style="background-image: url('{{ asset('images/wallpaper-two.jpg') }}');">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
                     <div class="room_card">
                         <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
                             style="background-image: url('{{ asset('images/wallpaper-three.jpg') }}');">
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
                     <div class="room_card">
                         <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
                             style="background-image: url('{{ asset('images/wallpaper-four.jpg') }}');">

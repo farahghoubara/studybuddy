@@ -219,7 +219,6 @@ div p a:hover {
 
 .main_container {
     margin: 30px 60px;
-    /* min-height: 100vh; */
 }
 
 footer {
@@ -306,6 +305,38 @@ footer {
     transform: scale(1.02);
 }
 
+.buttons-cta-3 {
+    align-items: end;
+    display: flex;
+    justify-content: end; /* Added */
+}
+
+.st-primary-button-3 {
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #4b93cc;
+    border-radius: 12px;
+    flex: none;
+    height: auto;
+    padding: 7px 20px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 22px;
+    text-decoration: none;
+    transition: font-size 0.3s, transform 0.4s, background-color 0.4s;
+}
+
+.st-primary-button-3:hover {
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    height: auto;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-decoration: none;
+    transform: scale(1.02);
+}
+
 @keyframes float-vertical {
     0% {
         transform: translatey(0px);
@@ -360,4 +391,58 @@ footer {
 
 .section_2_landing {
     padding: 60px 60px;
+}
+
+.categories {
+    background-color: #4b93cc;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.identity_background {
+    background-color: #4b93cc;
+}
+
+.rooms {
+    margin-top: 60px;
+}
+
+.rooms .room_card {
+    width: 375px;
+}
+
+.rooms .room_card .wallpaper {
+    background-size: cover;
+    background-position: center;
+    padding: 45px 10px;
+}
+
+.rooms .room_card .room_name_div {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rooms .room_card .room_name_div .room_name {
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+.rooms .room_card .room_info {
+    padding: 20px 5px;
+}
+
+.rooms .room_card .room_info .room_category_div {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.rooms .room_card .room_info .room_category_div .room_category {
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    top: -32px;
+}
+
+.rooms .room_card .room_info .room_description p {
+    height: 50px;
 }

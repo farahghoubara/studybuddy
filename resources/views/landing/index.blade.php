@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <div class="section_1_landing bg-light">
+    <div class="section_1_landing bg-light" data-aos="fade-down" data-aos-duration="1000">
         <div class="row d-flex align-items-center">
             <div class="col-7">
                 <div class="slogan">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="section_2_landing bg-dark">
+    <div class="section_2_landing bg-dark" data-aos="fade-down" data-aos-duration="1000">
         <div class="row d-flex justify-content-center">
             <img class="floating-image" style="max-width: 500px" src="{{ asset('images/Timeline-bro.png') }}"
                 alt="Study">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="section_1_landing bg-light">
+    <div class="section_1_landing bg-light"data-aos="fade-down" data-aos-duration="1000">
         <div class="row d-flex align-items-center">
             <div class="col-7">
                 <div class="slogan">
@@ -52,6 +52,7 @@
             <div class="col-5 d-flex justify-content-end">
                 <img class="floating-image-vertical" style="max-width: 500px" src="{{ asset('images/Online-test.png') }}"
                     alt="Study">
+
             </div>
         </div>
     </div>

@@ -39,7 +39,7 @@ class RegisterController extends Controller
     public function update(Request $request)
     {
         $id = auth()->user()->id;
-        $user = $user = User::findOrFail($id); // Assuming the user is authenticated
+        $user = User::findOrFail($id); // Assuming the user is authenticated
 
         // Validate the incoming request
         $request->validate([

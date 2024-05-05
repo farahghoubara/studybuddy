@@ -43,165 +43,49 @@
         <hr>
         <div class="container-fluid rooms">
             <div class="row">
-                <div class="col-lg-4 col-3  d-flex justify-content-center mb-5">
-                    <div class="room_card">
-                        <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
-                            style="background-image: url('{{ asset('images/wallpaper-one.jpg') }}');">
-                            <div class="my-auto text-white room_name_div">
-                                <span class="bg-dark room_name">Focus Room</span>
+                @foreach ($rooms as $room)
+                    <div class="col-lg-4 col-3  d-flex justify-content-center mb-5">
+                        <div class="room_card">
+                            <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
+                                style="background-image: url('/images/{{ $room->getWallpaper->path }}');">
+                                <div class="my-auto text-white room_name_div">
+                                    <span class="bg-dark room_name">{{ $room->name }}</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row bg-dark rounded-bottom room_info">
-                            <div class="container">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-5">
-                                        <h6 class="text-white mb-0"><i class="fa-solid fa-microphone-lines"></i> Farah Hany
-                                        </h6>
-                                    </div>
-                                    <div class="col-7 d-flex justify-content-end">
-                                        <div class="my-auto text-white room_category_div">
-                                            <span
-                                                class="identity_background room_category">{{ $categories[0]->name }}</span>
+                            <div class="row bg-dark rounded-bottom room_info">
+                                <div class="container">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-5">
+                                            <h6 class="text-white mb-0"><i class="fa-solid fa-microphone-lines"></i> {{$room->getUser->name}}
+                                            </h6>
+                                        </div>
+                                        <div class="col-7 d-flex justify-content-end">
+                                            <div class="my-auto text-white room_category_div">
+                                                <span
+                                                    class="identity_background room_category">{{ $room->getCategory->name }}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mt-4 room_description">
-                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Eligendi
-                                        voluptatibus suscipit</p>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="buttons-cta-3"><a href="{{ route('schedule') }}"
-                                            class="st-primary-button-3 w-button"><i class="fa-solid fa-angle-right"></i>
-                                            Join
-                                            Room</a>
+                                    <div class="row mt-4 room_description">
+                                        <p class="text-white">{{ $room->description }} </p>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="buttons-cta-3">
+                                            <a href="{{ route('schedule') }}" class="st-primary-button-3 w-button">
+                                                <i class="fa-solid fa-angle-right"></i> Join Room
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
-                    <div class="room_card">
-                        <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
-                            style="background-image: url('{{ asset('images/wallpaper-two.jpg') }}');">
-                            <div class="my-auto text-white room_name_div">
-                                <span class="bg-dark room_name">Lets study
-                                    guyssss</span>
-                            </div>
-                        </div>
-                        <div class="row bg-dark rounded-bottom room_info">
-                            <div class="container">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-5">
-                                        <h6 class="text-white mb-0"><i class="fa-solid fa-microphone-lines"></i> Omar Younes
-                                        </h6>
-                                    </div>
-                                    <div class="col-7 d-flex justify-content-end">
-                                        <div class="my-auto text-white room_category_div">
-                                            <span
-                                                class="identity_background room_category">{{ $categories[1]->name }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4 room_description">
-                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Eligendi
-                                        voluptatibus suscipit</p>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="buttons-cta-3"><a href="{{ route('schedule') }}"
-                                            class="st-primary-button-3 w-button"><i class="fa-solid fa-angle-right"></i>
-                                            Join
-                                            Room</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
-                    <div class="room_card">
-                        <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
-                            style="background-image: url('{{ asset('images/wallpaper-three.jpg') }}');">
-                            <div class="my-auto text-white room_name_div">
-                                <span class="bg-dark room_name">Computer Science
-                                    Room</span>
-                            </div>
-                        </div>
-                        <div class="row bg-dark rounded-bottom room_info">
-                            <div class="container">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-5">
-                                        <h6 class="text-white mb-0"><i class="fa-solid fa-microphone-lines"></i> Farah
-                                            Ghoubara
-                                        </h6>
-                                    </div>
-                                    <div class="col-7 d-flex justify-content-end">
-                                        <div class="my-auto text-white room_category_div">
-                                            <span
-                                                class="identity_background room_category">{{ $categories[2]->name }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4 room_description">
-                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Eligendi
-                                        voluptatibus suscipit</p>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="buttons-cta-3"><a href="{{ route('schedule') }}"
-                                            class="st-primary-button-3 w-button"><i class="fa-solid fa-angle-right"></i>
-                                            Join
-                                            Room</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-3 d-flex justify-content-center mb-5">
-                    <div class="room_card">
-                        <div class="row rounded-top d-flex justify-content-center align-items-center wallpaper"
-                            style="background-image: url('{{ asset('images/wallpaper-four.jpg') }}');">
-                            <div class="my-auto text-white room_name_div">
-                                <span class="bg-dark room_name">Arab Open University
-                                    Room</span>
-                            </div>
-                        </div>
-                        <div class="row bg-dark rounded-bottom room_info">
-                            <div class="container">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-5">
-                                        <h6 class="text-white mb-0"><i class="fa-solid fa-microphone-lines"></i> Omar
-                                            Derbala
-                                        </h6>
-                                    </div>
-                                    <div class="col-7 d-flex justify-content-end">
-                                        <div class="my-auto text-white room_category_div">
-                                            <span
-                                                class="identity_background room_category">{{ $categories[3]->name }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4 room_description">
-                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Eligendi
-                                        voluptatibus suscipit</p>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="buttons-cta-3"><a href="{{ route('schedule') }}"
-                                            class="st-primary-button-3 w-button"><i class="fa-solid fa-angle-right"></i>
-                                            Join
-                                            Room</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
+
+
+
     </div>
 
 

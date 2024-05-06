@@ -33,4 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [RegisterController::class, 'update'])->name('profile.update');
     Route::post('/profile/update-password', [RegisterController::class, 'updatePassword'])->name('profile.updatePassword');
     Route::post('/rooms/store', [RoomsController::class, 'store'])->name('rooms.store');
+    Route::get('/schedule/create', [ScheduleController::class, 'create'])->name('schedule.create');
+    Route::post('/schedule/store', [ScheduleController::class, 'store'])->name('schedule.store');
 });

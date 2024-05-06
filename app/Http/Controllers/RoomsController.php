@@ -8,6 +8,7 @@ use App\Models\Wallpaper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
+use Illuminate\Support\Facades\Session;
 
 
 class RoomsController extends Controller
@@ -34,7 +35,7 @@ class RoomsController extends Controller
         ]);
 
         // Create a new room instance
-        Room::create([
+        $room = Room::create([
             'name' => $request->roomName,
             'description' => $request->roomDescription,
             'category_id' => $request->roomCategory,
@@ -42,8 +43,11 @@ class RoomsController extends Controller
             'wallpaper_id' => $request->roomWallpaper,
             'user_id' =>$user->id,
         ]);
+        $room->save();
 
-        return redirect()->back()->with('success', 'Room created successfully!');
+        Session::flash('success', 'Room created successfully.');
+
+        return redirect()->back();
     }
 
     // public function privateRooms()

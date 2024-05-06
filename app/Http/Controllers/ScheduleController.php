@@ -7,6 +7,7 @@ use App\Models\LectureDay;
 use Illuminate\Http\Request;
 use App\Models\ScheduleSubject;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ScheduleController extends Controller
 {
@@ -52,6 +53,7 @@ class ScheduleController extends Controller
             $subject->lectureDays()->attach($lectureDays);
         }
 
-        return redirect()->route('schedule')->with('success', 'Schedule created successfully');
+        Session::flash('success', 'Schedule created successfully');
+        return redirect()->route('schedule');
     }
 }

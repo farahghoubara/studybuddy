@@ -7,7 +7,7 @@
     <div data-mdb-alert-init="" class="alert alert-success" role="alert" data-mdb-color="success"
         data-mdb-alert-initialized="true"><i class="fas fa-check-circle me-3"></i>{{ Session::get('success') }}</div>
     @endif
-    
+
     <div class="main_container" style="min-height: 65vh;">
         @if ($schedules->isEmpty())
             <div class="section_2_landing">
@@ -15,6 +15,7 @@
                     <div class="slogan">
                         <h1 class="font-600-lg identity_color text-center">You haven't created the schedule yet!</h1>
                     </div>
+                    
                 </div>
                 <div class="row d-flex justify-content-center">
                     <img class="" style="max-width: 500px" src="{{ asset('images/no-schedule.svg') }}" alt="Study">

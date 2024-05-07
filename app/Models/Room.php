@@ -9,7 +9,7 @@ class Room extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'category_id', 'type', 'wallpaper_id'];
+    protected $fillable = ['name', 'description', 'category_id', 'type', 'wallpaper_id', 'user_id'];
 
     public function getCategory()
     {

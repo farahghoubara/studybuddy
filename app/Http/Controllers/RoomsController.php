@@ -15,11 +15,18 @@ class RoomsController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-        $rooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])->get();
-        $wallpapers = Wallpaper::all();
         $user = Auth::user();
-        return view('rooms.index', compact('user', 'categories', 'wallpapers', 'rooms'));
+        $categories = Category::all();
+        $rooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
+            ->whereNull('deleted_at')
+            ->get();
+            $userRooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
+            ->where('user_id', $user->id)
+            ->whereNull('deleted_at')
+            ->get();
+        $wallpapers = Wallpaper::all();
+
+        return view('rooms.index', compact('user', 'categories', 'wallpapers', 'rooms', 'userRooms'));
     }
 
     public function store(Request $request)
@@ -33,7 +40,6 @@ class RoomsController extends Controller
             'roomType' => 'required|in:public,private',
             'roomWallpaper' => 'required|exists:wallpapers,id',
         ]);
-
         // Create a new room instance
         $room = Room::create([
             'name' => $request->roomName,

@@ -33,6 +33,7 @@ class ScheduleController extends Controller
             'subjects.*.lecture_days' => 'required|array',
             'subjects.*.lecture_days.*' => 'required|string|in:Saturday,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday',
         ], [
+            'subjects.*.end_date.after_or_equal' => 'The end date must be after or equal to the start date.',
             'subjects.*.lecture_days.required' => 'The lecture days field is required.',
         ]);
 

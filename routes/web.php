@@ -4,16 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoomsController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ScheduleController;
 
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/rooms', [RoomsController::class, 'index'])->name('rooms');
-// Route::get('/private-rooms', [RoomsController::class, 'privateRooms'])->name('private-rooms');
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
-Route::get('/exam-question', [QuestionController::class, 'index'])->name('questions');
+Route::get('/practice', [PracticeController::class, 'index'])->name('practice');
+Route::Post('/practice/handle', [PracticeController::class, 'createTest'])->name('test.create');
+Route::get('/practice/test', [PracticeController::class, 'test'])->name('test');
+Route::post('/practice/test/result', [PracticeController::class, 'result'])->name('test.result');
 
 
 // Guest Middleware

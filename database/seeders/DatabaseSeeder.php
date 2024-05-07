@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // CategorySeeder::class,
             // WallpaperSeeder::class,
-            LectureDaysTableSeeder::class,
+            // LectureDaysTableSeeder::class,
+            SubjectSeeder::class,
         ]);
     }
 }

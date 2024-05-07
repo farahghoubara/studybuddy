@@ -7,7 +7,7 @@
     <div data-mdb-alert-init="" class="alert alert-success" role="alert" data-mdb-color="success"
         data-mdb-alert-initialized="true"><i class="fas fa-check-circle me-3"></i>{{ Session::get('success') }}</div>
     @endif
-    @if (Auth::user() && $userRooms->isEmpty())
+    @if (Auth::user() && ($userRooms->isEmpty()))
         <div class="section_2_landing">
             <div class="row d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
                 <div class="slogan">
@@ -31,7 +31,7 @@
             </div>
         </div>
     @endif
-    <div class="main_container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="main_container" style="min-height: 65vh;" data-aos="fade-up" data-aos-duration="1000">
         <div class="row d-flex align-items-center">
             <div class="col-6">
                 <h1>Public Rooms</h1>

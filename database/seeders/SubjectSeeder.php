@@ -29,7 +29,7 @@ class SubjectSeeder extends Seeder
         ]);
 
         Subject::create([
-            'name' => 'WEb Technologies',
+            'name' => 'Web Technologies',
         ]);
 
         Subject::create([

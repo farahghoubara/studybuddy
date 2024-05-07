@@ -20,14 +20,19 @@ class RoomsController extends Controller
         $rooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
             ->whereNull('deleted_at')
             ->get();
+        if ($user) {
             $userRooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
-            ->where('user_id', $user->id)
-            ->whereNull('deleted_at')
-            ->get();
+                ->where('user_id', $user->id)
+                ->whereNull('deleted_at')
+                ->get();
+        } else {
+            $userRooms = collect();
+        }
         $wallpapers = Wallpaper::all();
 
         return view('rooms.index', compact('user', 'categories', 'wallpapers', 'rooms', 'userRooms'));
     }
+
 
     public function store(Request $request)
     {
@@ -47,7 +52,7 @@ class RoomsController extends Controller
             'category_id' => $request->roomCategory,
             'type' => $request->roomType,
             'wallpaper_id' => $request->roomWallpaper,
-            'user_id' =>$user->id,
+            'user_id' => $user->id,
         ]);
         $room->save();
 

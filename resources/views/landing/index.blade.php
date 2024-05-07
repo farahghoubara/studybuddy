@@ -44,7 +44,7 @@
                     <h1 class="font-600-lg">Master Your Subjects, Power Through Practice:<br>Tailored Learning for Academic
                         Excellence!</h1>
                 </div>
-                <div class="buttons-cta d-flex align-items-center"><a href="{{ route('questions') }}"
+                <div class="buttons-cta d-flex align-items-center"><a href="{{ route('practice') }}"
                         class="st-primary-button-1 w-button">Practice Now</a>
                 </div>
             </div>

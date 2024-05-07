@@ -33,7 +33,7 @@
                         <a class="nav-link {{ request()->routeIs('schedule') ? 'active' : '' }}" href="{{ route('schedule') }}">Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('questions') ? 'active' : '' }}" href="{{ route('questions') }}">Exams Questions</a>
+                        <a class="nav-link {{ request()->routeIs('practice') ? 'active' : '' }}" href="{{ route('practice') }}">Practice</a>
                     </li>
                 </ul>
             </div>

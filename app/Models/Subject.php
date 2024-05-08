@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Subject extends Model
 {
-    use HasFactory, SoftDeletes;
 
-    protected $dates = ['deleted_at'];
-    protected static function boot()
-    {
-        parent::boot();
+    protected $witch = ['questions'];
 
-        static::addGlobalScope('notDeleted', function ($query) {
-            $query->whereNull('deleted_at');
-        });
-    }
+    public function questions()
+{
+    return $this->hasMany(Question::class);
 }
+}
+

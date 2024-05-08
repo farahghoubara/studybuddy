@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             // CategorySeeder::class,
             // WallpaperSeeder::class,
             // LectureDaysTableSeeder::class,
-            SubjectSeeder::class,
+            QuestionsTableSeeder::class,
+            AnswersSeeder::class,
         ]);
     }
 }

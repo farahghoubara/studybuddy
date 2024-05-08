@@ -27,8 +27,9 @@ class PracticeController extends Controller
     public function test(Request $request)
     {
         $subjectId = $request->input('subjectId');
-        $selectedSubject = Subject::find($subjectId);
-        return view('practice.test', compact('selectedSubject'));
+        $subject = Subject::find($subjectId);
+        $questions = $subject->questions->shuffle()->take(10);
+        return view('practice.test', compact('subject', 'questions'));
     }
 
     public function result(Request $request)

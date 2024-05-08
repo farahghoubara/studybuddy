@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             // WallpaperSeeder::class,
             // LectureDaysTableSeeder::class,
             QuestionsTableSeeder::class,
-            AnswersSeeder::class,
+            // AnswersSeeder::class,
         ]);
     }
 }

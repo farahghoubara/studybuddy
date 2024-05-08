@@ -9,11 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Subject extends Model
 {
 
-    protected $witch = ['questions'];
+    protected $with = ['questions'];
 
     public function questions()
-{
-    return $this->hasMany(Question::class);
+    {
+        return $this->hasMany(Question::class);
+    }
 }
-}
-

@@ -37,7 +37,7 @@ class SubjectSeeder extends Seeder
         ]);
 
         Subject::create([
-            'name' => 'Ethics, Law & The Governance in IT',
+            'name' => 'Python',
         ]);
 
     }

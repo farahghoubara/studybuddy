@@ -12,17 +12,17 @@ class LoginController extends Controller
     {
         return view('login.index');
     }
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
+        public function login(Request $request)
+        {
+            $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
-        }
-        
-        return redirect()->back()->withInput($request->only('email'))->withErrors([
-            'email' => 'These credentials do not match our records.',
-        ]);
+            if (Auth::attempt($credentials)) {
+                return redirect()->intended('/');
+            }
+
+            return redirect()->back()->withInput($request->only('email'))->withErrors([
+                'email' => 'These credentials do not match our records.',
+            ]);
     }
     public function logout(Request $request)
     {
@@ -34,7 +34,7 @@ class LoginController extends Controller
 
         return redirect('/');
     }
-    
+
 
     public function forgetPassword()
     {

@@ -39,6 +39,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/schedule/store', [ScheduleController::class, 'store'])->name('schedule.store');
     Route::get('/rooms/{room}', [RoomsController::class, 'join'])->name('join_room');
     Route::delete('/rooms/{room}', [RoomsController::class, 'destroy'])->name('rooms.destroy');
-    Route::delete('/rooms/{room}', 'RoomsController@destroy')->name('rooms.destroy');
+    
 
 });

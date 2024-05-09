@@ -14,7 +14,6 @@ class ScheduleController extends Controller
     public function index()
     {
         $schedules = Schedule::where('user_id', Auth::id())->with('scheduleSubjects.lectureDays')->get();
-        // dd($schedules);
         return view('schedule.index', compact('schedules'));
     }
 

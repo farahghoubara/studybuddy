@@ -34,6 +34,11 @@ class WallpaperSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'path' => 'wallpaper-five.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

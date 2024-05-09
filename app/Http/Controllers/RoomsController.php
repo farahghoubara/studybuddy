@@ -17,16 +17,24 @@ class RoomsController extends Controller
     {
         $user = Auth::user();
         $categories = Category::all();
-        $rooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
-            ->whereNull('deleted_at')
-            ->get();
+
         if ($user) {
             $userRooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
                 ->where('user_id', $user->id)
                 ->whereNull('deleted_at')
                 ->get();
+
+            $otherRooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
+                ->where('user_id', '!=', $user->id)
+                ->whereNull('deleted_at')
+                ->get();
+
+            $rooms = $userRooms->merge($otherRooms);
         } else {
             $userRooms = collect();
+            $rooms = Room::with(['getCategory', 'getWallpaper', 'getUser'])
+                ->whereNull('deleted_at')
+                ->get();
         }
         $wallpapers = Wallpaper::all();
 
@@ -61,8 +69,21 @@ class RoomsController extends Controller
         return redirect()->back();
     }
 
-    // public function privateRooms()
-    // {
-    //     return view('rooms.private_rooms.index');
-    // }
+    public function join(Room $room)
+    {
+        $user = Auth::user();
+        return view('rooms.join', compact('room', 'user'));
+    }
+
+    public function destroy(Room $room)
+    {
+        $user = Auth::user();
+        if ($room->user_id == $user->id) {
+            $room->delete();
+            Session::flash('success', 'Room deleted successfully.');
+        } else {
+            Session::flash('error', 'You are not authorized to delete this room.');
+        }
+        return redirect()->route('rooms');
+    }
 }

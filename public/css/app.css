@@ -417,6 +417,10 @@ footer {
     padding: 45px 10px;
 }
 
+.party_wallpaper {
+    background-size: cover;
+}
+
 .rooms .room_card .room_name_div {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -447,13 +451,68 @@ footer {
     height: 50px;
 }
 
-.btn-info{
-    background-color: #4b93cc!important;
-    color: #fff!important;
+.btn-info {
+    background-color: #4b93cc !important;
+    color: #fff !important;
 }
-.btn-info:hover{
-    background-color: #3b76a6!important;
+.btn-info:hover {
+    background-color: #3b76a6 !important;
 }
 
+.user_room_border_one {
+    border-top: 5px solid #4b93cc;
+    border-right: 5px solid #4b93cc;
+    border-left: 5px solid #4b93cc;
+}
 
+.user_room_border_two {
+    border-bottom: 5px solid #4b93cc;
+    border-right: 5px solid #4b93cc;
+    border-left: 5px solid #4b93cc;
+}
 
+.party_name {
+    margin-left: 9px;
+    font-size: 26px;
+    border-radius: 10px;
+    padding: 3px 10px;
+    background-color: #4b93cc;
+    color: #fff;
+}
+
+.party_user_name{
+    color: #fff;
+    background-color: #000;
+    padding: 10px 80px;
+    border-radius: 10px;
+}
+
+.video_rooms{
+    margin-top: 100px;
+}
+
+.video_rooms .video_room{
+    border: 3px solid #4b93cc;
+    border-radius: 20px;
+}
+
+.video-container {
+    position: relative;
+}
+
+.video-container .hover-text {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.video-container:hover .hover-text {
+    display: block;
+}

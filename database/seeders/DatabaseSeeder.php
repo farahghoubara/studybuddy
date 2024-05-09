@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            // CategorySeeder::class,
-            // WallpaperSeeder::class,
-            // LectureDaysTableSeeder::class,
+            CategorySeeder::class,
+            WallpaperSeeder::class,
+            LectureDaysTableSeeder::class,
             QuestionsTableSeeder::class,
-            // AnswersSeeder::class,
+            AnswersSeeder::class,
         ]);
     }
 }

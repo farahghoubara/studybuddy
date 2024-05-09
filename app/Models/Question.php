@@ -13,10 +13,6 @@ class Question extends Model
     protected $fillable = ['header', 'subject_id', 'explanation'];
     protected $with = ['answers'];
 
-    // public function subject()
-    // {
-    //     return $this->belongsTo(Subject::class);
-    // }
     public function answers()
     {
         return $this->hasMany(Answer::class);
